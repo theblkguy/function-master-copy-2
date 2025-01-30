@@ -4,6 +4,13 @@
 
 function objectValues(object) {
     // code
+    /**
+     * I: an object
+     * O: An array of it's values
+     * C: N/A
+     * E: N/A
+     */
+    return Object.values(object)
 } 
 
 //////////////////////////////////////////////////////////////////////
@@ -11,7 +18,13 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
-
+    /**
+     * I: An object
+     * O: all keys in a string seperated by a space
+     * C:
+     * E: 
+     * */
+    return Object.keys(object).join(' ')
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -19,15 +32,49 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
+        /**
+     * I: An object
+     * O: All string values seperated by a space
+     * C: N/A
+     * E: N/A
+     */
+
+    // create container variable for object values
+    var objVal = Object.values(object)
+    // initialize a variable with array literal
+    var objStr = []
+    // console.log(objVal)
+    for (var i = 0; i <= objVal.length - 1; i++) {
+        // if the current index is a strin
+        if (typeof objVal[i] === 'string') {
+            // push the current index value into container array
+            objStr.push(objVal[i])
+        }
+    }
+    // return strings joined by a space
+    return objStr.join(' ')
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+/**
+ * I: An argument
+ * O: return 'array' if array and 'object' if object
+ * C:
+ * E:
+ *  */
+
+
 function arrayOrObject(collection) {
-    
+    if (Array.isArray(collection) === true) {
+        return 'array';
+    } else if (typeof collection === 'object' && !Array.isArray(collection) && collection !== null) {
+        return 'object'
+    }
+
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -35,7 +82,7 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
+    return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 //////////////////////////////////////////////////////////////////////
