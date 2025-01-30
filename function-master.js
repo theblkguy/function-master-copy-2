@@ -90,7 +90,8 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+    return string.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+   
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -98,7 +99,10 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-
+    if (object.hasOwnProperty('name')){
+        let capName = object['name'].charAt(0).toUpperCase() + object['name'].slice(1);
+        return 'Welcome ' + capName + '!';
+    } 
 }
 
 //////////////////////////////////////////////////////////////////////
