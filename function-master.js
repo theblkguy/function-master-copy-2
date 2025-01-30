@@ -109,7 +109,20 @@ function welcomeMessage(object) {
 // Function 8 - Profile Info /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+/**
+ * I: Object with a name and species
+ * O: return string "'Name' is 'Species'""
+ * C:
+ * E:
+ *  */
+
+
 function profileInfo(object) {
+    if(Object.hasOwn(object, 'name') && Object.hasOwn(object, 'species')){
+        let capName = object['name'].charAt(0).toUpperCase() + object['name'].slice(1);
+        let capSpecies = object['species'].charAt(0).toUpperCase() + object['species'].slice(1);
+        return capName + ' is a ' + capSpecies;
+    }
 
 }
 
